@@ -4,6 +4,8 @@ const Q = require('@nmq/q/client');
 
 let PORT = 3000;
 
+app.use(express.urlencoded({ extended: true }));
+
 app.get('/read', (req, res) => {
   Q.publish('read', req.query);
 });
