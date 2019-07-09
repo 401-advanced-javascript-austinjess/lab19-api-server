@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --coverage",
-    "lint": "eslint"
+    "lint": "eslint",
+    "start": "node ."
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,7 @@
   "homepage": "https://github.com/401-advanced-javascript-austinjess/lab19-api-server#readme",
   "dependencies": {
     "@nmq/q": "^1.0.3",
+    "dotenv": "^8.0.0",
     "eslint": "^6.0.1",
     "express": "^4.17.1",
     "jest": "^24.8.0",
