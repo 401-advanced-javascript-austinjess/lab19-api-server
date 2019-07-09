@@ -7,19 +7,23 @@ let PORT = 3000;
 app.use(express.urlencoded({ extended: true }));
 
 app.get('/read', (req, res) => {
-  Q.publish('read', req.query);
+  Q.publish('database', 'read', req.query);
+  res.sendStatus(200);
 });
 
 app.post('/create', (req, res) => {
-  Q.publish('create', req.body);
+  Q.publish('database', 'create', req.body);
+  res.sendStatus(200);
 });
 
 app.put('/update', (req, res) => {
-  Q.publish('update', req.body);
+  Q.publish('database', 'update', req.body);
+  res.sendStatus(200);
 });
 
 app.delete('/delete', (req, res) => {
-  Q.publish('delete', req.body);
+  Q.publish('database', 'delete', req.body);
+  res.sendStatus(200);
 });
 
 app.listen(PORT, () => {
